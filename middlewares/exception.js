@@ -12,6 +12,13 @@ const catchError = (ctx, next) => {
       }
       ctx.status = error.status
     }
+    else {
+      ctx.body = {
+        msg: 'we made a mistake',
+        error_code: 999,
+        request: `${ctx.method} ${ctx.path}`
+      }
+    }
   }
 }
 
