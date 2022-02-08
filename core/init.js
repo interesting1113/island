@@ -10,6 +10,12 @@ class InitManager {
     InitManager.loadHttpException()
   }
 
+  static initConfig() {
+    const configPath = path || process.cwd() + '/config/config.js'
+    const config = require(configPath)
+    global.config = config
+  }
+
   static initloadRouters() {
     // path config
     const apiDiredctory = `${process.cwd()}/app/api`
